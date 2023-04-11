@@ -9,18 +9,45 @@ namespace Gambling
    internal class Program
 
    {
-        static public Card[] Cards = new Card[52];
+        
+        static public List<Card> Cards = new List<Card>();
 
       static void Main(string[] args)
 
       {
             LoadCardValues();
-            for (int i = 0; i < Cards.Length; i++)
+            for (int i = 0; i < Cards.Count; i++)
             {
-                Console.WriteLine("{0}, {1},{2}", Cards[i].Name, Cards[i].Value, Cards[i].Color);
+                Console.WriteLine("{0}, {1}, {2}", Cards[i].Name, Cards[i].Value, Cards[i].Color);
             }
+            while(true)
+            {
+                DrawNewCard(1);
+                Console.WriteLine("StackSize = {0}", Cards.Count());
+                Console.ReadLine();
+            }
+            
 
             
+      }
+      static void DrawNewCard(int player)
+      {
+        Random random = new Random();
+        int cardNumber = random.Next(0,Cards.Count);
+       
+        
+            GiveCardTo(cardNumber, player);
+            RemoveCard(cardNumber);
+        
+        
+      }
+      static void GiveCardTo(int cardArrayNumber, int player)
+      {
+        Console.WriteLine(Cards[cardArrayNumber].Name);
+      }
+      static void RemoveCard(int cardArrayNumber)
+      {
+        Cards.Remove(Cards[cardArrayNumber]);
       }
        
        
@@ -59,9 +86,9 @@ namespace Gambling
        
         static void LoadCardValues()
         {
-            for (int i = 0; i < Cards.Length; i++)
+            for (int i = 0; i < 52; i++)
             {
-                Cards[i] = new Card();
+                Cards.Add(new Card());
             }
         Cards[0].Drawed = false; Cards[0].Name = "ACE"; Cards[0].Value = 1;Cards[0].Color = 1;
         Cards[1].Drawed = false; Cards[1].Name = "ACE"; Cards[1].Value = 1;Cards[1].Color = 2;
@@ -115,7 +142,7 @@ namespace Gambling
         Cards[49].Drawed = false; Cards[49].Name = "KING"; Cards[49].Value = 13;Cards[49].Color = 2;
         Cards[50].Drawed = false; Cards[50].Name = "KING"; Cards[50].Value = 13;Cards[50].Color = 3;
         Cards[51].Drawed = false; Cards[51].Name = "KING"; Cards[51].Value = 13;Cards[51].Color = 4;
-
+            
          
 
 
