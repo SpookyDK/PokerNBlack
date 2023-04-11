@@ -1,0 +1,15 @@
+/home/esben/Programmering/Gambling/bin/Debug/net7.0/Gambling
+/home/esben/Programmering/Gambling/bin/Debug/net7.0/Gambling.deps.json
+/home/esben/Programmering/Gambling/bin/Debug/net7.0/Gambling.runtimeconfig.json
+/home/esben/Programmering/Gambling/bin/Debug/net7.0/Gambling.dll
+/home/esben/Programmering/Gambling/bin/Debug/net7.0/Gambling.pdb
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/Gambling.csproj.AssemblyReference.cache
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/Gambling.GeneratedMSBuildEditorConfig.editorconfig
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/Gambling.AssemblyInfoInputs.cache
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/Gambling.AssemblyInfo.cs
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/Gambling.csproj.CoreCompileInputs.cache
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/Gambling.dll
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/refint/Gambling.dll
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/Gambling.pdb
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/Gambling.genruntimeconfig.cache
+/home/esben/Programmering/Gambling/obj/Debug/net7.0/ref/Gambling.dll

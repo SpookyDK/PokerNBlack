@@ -1,0 +1,17 @@
+using System; 
+
+namespace Gambling
+
+{
+
+  internal class Card
+
+   {
+
+        public bool Drawed { get; set; }
+        public string Name { get; set; }
+        public int Value { get; set; }
+        public int Color { get; set; }
+   }
+
+}
