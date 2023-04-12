@@ -15,16 +15,18 @@ namespace Gambling
       static void Main(string[] args)
 
       {
+            Console.Clear();
             LoadCardValues();
-            for (int i = 0; i < Cards.Count; i++)
-            {
-                Console.WriteLine("{0}, {1}, {2}", Cards[i].Name, Cards[i].Value, Cards[i].Color);
-            }
+            Intro();
+            
+
+
             while(true)
             {
                 DrawNewCard(1);
                 Console.WriteLine("StackSize = {0}", Cards.Count());
                 Console.ReadLine();
+                
             }
             
 
@@ -48,6 +50,52 @@ namespace Gambling
       static void RemoveCard(int cardArrayNumber)
       {
         Cards.Remove(Cards[cardArrayNumber]);
+      }
+      static void Intro()
+      {
+          System.Console.WriteLine("WELCOME TO THE GRAND CARD CASINO");
+          System.Console.WriteLine("Here you can play Poker and Blackjack");
+          
+          bool gettingInput = true;
+          while(gettingInput)
+          {
+            System.Console.WriteLine("What a we playing?");
+            switch (Console.ReadLine())
+            {
+              case "poker":
+              gettingInput = false;
+
+              break;
+              case "Poker":
+              gettingInput = false;
+
+              break;
+              case "p":
+              gettingInput = false;
+
+              break;
+              case "P":
+              gettingInput = false;
+
+              break;
+              case "BJ":
+              gettingInput = false;
+
+              break;
+              case "Blackjack":
+              gettingInput = false;
+
+
+              break;
+
+              default:
+              Console.WriteLine("Try again");
+              break;
+
+          }
+          }
+          
+
       }
        
        
