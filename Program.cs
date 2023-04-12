@@ -18,6 +18,8 @@ namespace Gambling
             Console.Clear();
             LoadCardValues();
             Intro();
+            System.Console.WriteLine(GetPlayer());
+            
             
 
 
@@ -98,7 +100,31 @@ namespace Gambling
 
       }
        
-       
+      static int GetPlayer()
+      {
+          System.Console.WriteLine("How many players are playing");
+          System.Console.WriteLine("We recommend between 1-4");
+          System.Console.WriteLine("If left blank playercound will be set to 1");
+          string tempstring = Console.ReadLine();
+          switch (tempstring)
+          {
+            case "2":
+            return 2;
+            
+            case "3":
+            return 3;
+            
+            case "4":
+            return 4;
+            
+
+            default:
+            return 1;
+
+            
+          }
+
+      }
        
        
        
