@@ -232,6 +232,12 @@ namespace Gambling
         public int Value { get; set; }
         public int Color { get; set; }
    }
+   internal class Player
+
+   {
+      public List<Card> PlayerCards = new List<Card>(); 
+      public int Cash { get; set; }
+   }
 
 
    
