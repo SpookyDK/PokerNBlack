@@ -237,6 +237,25 @@ namespace Gambling
    {
       public List<Card> PlayerCards = new List<Card>(); 
       public int Cash { get; set; }
+
+      public int GetTotalCards()
+      {
+          int temp = 0;
+          foreach (var Card in PlayerCards)
+          {
+            temp += Card.Value;
+          }
+
+
+          return temp;
+      }
+      public void WriteCards()
+      {
+        foreach (var Card in PlayerCards)
+        {
+          System.Console.WriteLine(Card.Name);
+        }
+      }
    }
 
 
