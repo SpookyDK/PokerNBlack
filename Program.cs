@@ -16,7 +16,7 @@ namespace Gambling
 
       {
             Console.Clear();
-            LoadCardValues();
+            
             Intro();
             System.Console.WriteLine(GetPlayer());
             
@@ -128,7 +128,25 @@ namespace Gambling
        
        
        
-       
+       static void PlayingBlackJack()
+       {
+          Cards.Clear();
+          LoadCardValues();
+          int Players = GetPlayer();
+          Player[] PlayerArray = new Player[Players+1];
+          
+          for (int i = 1; i < PlayerArray.Length; i++)
+          {
+            PlayerArray[i] = new Player();
+          }
+
+
+
+       }
+       static void PlayingPoker()
+       {
+
+       }
        
        
        
