@@ -142,7 +142,32 @@ namespace Gambling
               if (PlayerArray[i].PlayerCards.Count < 2)
               {
                   DrawNewCard(PlayerArray[i]);
-                  
+                  System.Console.WriteLine("Player {0} drawed a card", i);
+              }
+              else 
+              {
+                bool playerturn = true;
+                while (playerturn)
+                {
+
+                  Console.Clear();
+                  System.Console.WriteLine("Player {0} currently has these cards", i );
+                  PlayerArray[i].WriteCards();
+                  System.Console.WriteLine("Total card values are currently {0}", PlayerArray[i].GetTotalCards());
+                  System.Console.WriteLine("Draw y/n");
+                  switch (Console.ReadLine())
+                  {
+                    case "y" or "Y" or "yes" or "Yes" or "YES":
+                    DrawNewCard(PlayerArray[i]);
+                    
+                    break;
+                    case "n" or "N" or "no" or "No" or "NO":
+                    playerturn = false;
+                    break;
+                    default:
+                    break;
+                  }
+                }
               }
              
             }
@@ -268,9 +293,14 @@ namespace Gambling
       public int GetTotalCards()
       {
           int temp = 0;
+          
           foreach (var Card in PlayerCards)
           {
             temp += Card.Value;
+          }
+          if (temp > 21)
+          {
+            if (PlayerCards.Contains<Card>(); //HER
           }
 
 
