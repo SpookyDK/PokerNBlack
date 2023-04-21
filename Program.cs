@@ -300,7 +300,12 @@ namespace Gambling
           }
           if (temp > 21)
           {
-            if (PlayerCards.Contains<Card>(); //HER
+            var fish = PlayerCards.FindAll(x => x.Name.Contains("ACE"));
+                if (fish.Count > 0) //HER
+                {
+                    // do logic here
+                }
+
           }
 
 
