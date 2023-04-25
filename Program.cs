@@ -56,37 +56,21 @@ namespace Gambling
           while(gettingInput)
           {
             System.Console.WriteLine("What a we playing?");
-            switch (Console.ReadLine())
+            switch (Console.ReadLine().ToLower())
             {
-              case "poker":
+              case "poker" or "p":
               gettingInput = false;
-
               break;
-              case "Poker":
-              gettingInput = false;
 
-              break;
-              case "p":
-              gettingInput = false;
-
-              break;
-              case "P":
-              gettingInput = false;
-
-              break;
-              case "BJ" or "Blackjack" or "b":
+              case "bj" or "blackjack" or "b":
               PlayingBlackJack();
               break;
-              
-
-
-             
 
               default:
               Console.WriteLine("Try again");
               break;
 
-          }
+            }
           }
           
 
@@ -107,7 +91,7 @@ namespace Gambling
             return 3;
             
             case "4":
-            return 4;
+            return 4; 
             
 
             default:
@@ -300,11 +284,18 @@ namespace Gambling
           }
           if (temp > 21)
           {
-            if (PlayerCards.Contains<Card>(); //HER
-          }
+            var aces = PlayerCards.FindAll(x => x.Name.Contains("ACE"));
+                if (aces.Count > 0) 
+                {
+                    temp -= aces.Count * 10;
+                } 
+            }
+        return temp;
+
+       }
 
 
-          return temp;
+         
       }
       public void WriteCards()
       {
