@@ -113,7 +113,7 @@ namespace Gambling
           
           for (int i = 0; i <= Players; i++)
           {
-            PlayerArray.Add(new Player());
+            PlayerArray.Add(new Player() {isAlive = true});
           }
           System.Console.WriteLine(PlayerArray.Count);
           System.Console.WriteLine("p3");
@@ -130,27 +130,43 @@ namespace Gambling
               }
               else 
               {
-                bool playerturn = true;
+                bool playerturn = false;
+                if (PlayerArray[i].isAlive)
+                {
+                  playerturn = true; 
+                }
+                
                 while (playerturn)
                 {
-
+                  
                   Console.Clear();
                   System.Console.WriteLine("Player {0} currently has these cards", i );
                   PlayerArray[i].WriteCards();
                   System.Console.WriteLine("Total card values are currently {0}", PlayerArray[i].GetTotalCards());
-                  System.Console.WriteLine("Draw y/n");
-                  switch (Console.ReadLine())
+                  if (PlayerArray[i].GetTotalCards() > 21)
                   {
-                    case "y" or "Y" or "yes" or "Yes" or "YES":
+                    Console.WriteLine("You have exceeded 21 and have lost your turn, Loser ");
+                    PlayerArray[i].isAlive  = false;
+                    playerturn = false;
+                    Console.ReadLine();
+                  }
+                  else 
+                  {
+                    System.Console.WriteLine("Draw y/n");
+                    switch (Console.ReadLine().ToLower())
+                  {
+                    case "y" or "yes":
                     DrawNewCard(PlayerArray[i]);
                     
                     break;
-                    case "n" or "N" or "no" or "No" or "NO":
+                    case "n" or "no":
                     playerturn = false;
                     break;
                     default:
                     break;
                   }
+                  }
+                  
                 }
               }
              
@@ -273,7 +289,7 @@ namespace Gambling
    {
       public List<Card> PlayerCards = new List<Card>(); 
       public int Cash { get; set; }
-
+      public bool isAlive { get; set; }
       public int GetTotalCards()
       {
           int temp = 0;
@@ -289,14 +305,17 @@ namespace Gambling
                 {
                     temp -= aces.Count * 10;
                 } 
-            }
+          }
         return temp;
 
-       }
+      }
 
 
          
-      }
+      
+
+
+
       public void WriteCards()
       {
         foreach (var Card in PlayerCards)
@@ -305,11 +324,11 @@ namespace Gambling
           
         }
       }
-   }
+   
 
 
    
-
+  }
 }
 
 
