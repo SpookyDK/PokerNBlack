@@ -55,6 +55,7 @@ namespace Gambling
           bool gettingInput = true;
           while(gettingInput)
           {
+            Console.Clear();
             System.Console.WriteLine("What a we playing?");
             switch (Console.ReadLine().ToLower())
             {
@@ -116,22 +117,25 @@ namespace Gambling
             PlayerArray.Add(new Player() {isAlive = true});
           }
           System.Console.WriteLine(PlayerArray.Count);
-          System.Console.WriteLine("p3");
+          
 
           while (true)
           {
-            
-            for (int i = 1; i <= PlayerArray.Count -1; i++)
+            for (int i = 0; i <= 2; i++)
             {
-              if (PlayerArray[i].PlayerCards.Count < 2)
+              DrawNewCard(PlayerArray[0]);
+            for (int j = 1; j <= PlayerArray.Count -1; j++)
+            {
+
+              if (PlayerArray[j].PlayerCards.Count < 2)
               {
-                  DrawNewCard(PlayerArray[i]);
-                  System.Console.WriteLine("Player {0} drawed a card", i);
+                  DrawNewCard(PlayerArray[j]);
+                  System.Console.WriteLine("Player {0} drawed a card", j);
               }
               else 
               {
                 bool playerturn = false;
-                if (PlayerArray[i].isAlive)
+                if (PlayerArray[j].isAlive)
                 {
                   playerturn = true; 
                 }
@@ -140,13 +144,14 @@ namespace Gambling
                 {
                   
                   Console.Clear();
-                  System.Console.WriteLine("Player {0} currently has these cards", i );
-                  PlayerArray[i].WriteCards();
-                  System.Console.WriteLine("Total card values are currently {0}", PlayerArray[i].GetTotalCards());
-                  if (PlayerArray[i].GetTotalCards() > 21)
+                  System.Console.WriteLine("The Dealer has an {0}", PlayerArray[0].PlayerCards[0].Name);
+                  System.Console.WriteLine("Player {0} currently has these cards", j );
+                  PlayerArray[j].WriteCards();
+                  System.Console.WriteLine("Total card values are currently {0}", PlayerArray[j].GetTotalCards());
+                  if (PlayerArray[j].GetTotalCards() > 21)
                   {
                     Console.WriteLine("You have exceeded 21 and have lost your turn, Loser ");
-                    PlayerArray[i].isAlive  = false;
+                    PlayerArray[j].isAlive  = false;
                     playerturn = false;
                     Console.ReadLine();
                   }
@@ -156,7 +161,7 @@ namespace Gambling
                     switch (Console.ReadLine().ToLower())
                   {
                     case "y" or "yes":
-                    DrawNewCard(PlayerArray[i]);
+                    DrawNewCard(PlayerArray[j]);
                     
                     break;
                     case "n" or "no":
@@ -165,15 +170,56 @@ namespace Gambling
                     default:
                     break;
                   }
+
                   }
+
                   
                 }
               }
              
             }
+            }
+            break;
+            
 
-            Console.ReadLine();
+           
+            
+
+
+
           }
+          bool DealerDrawing = true;
+            while (DealerDrawing)
+            {
+              if (PlayerArray[0].GetTotalCards() >= 16)
+              {
+                DealerDrawing = false;
+                System.Console.WriteLine("Dealer currently has these cards");
+                PlayerArray[0].WriteCards();
+                System.Console.WriteLine("Total card values are currently {0}", PlayerArray[0].GetTotalCards());
+
+
+              }
+              else if (PlayerArray[0].GetTotalCards() >= 21)
+              {
+                DealerDrawing = false;
+                PlayerArray[0].isAlive = false;
+                 System.Console.WriteLine("Dealer currently has these cards");
+                  PlayerArray[0].WriteCards();
+                  System.Console.WriteLine("Total card values are currently {0}", PlayerArray[0].GetTotalCards());
+              }
+              else
+              {
+                DrawNewCard(PlayerArray[0]);
+                System.Console.WriteLine("Dealer currently has these cards");
+                PlayerArray[0].WriteCards();
+                System.Console.WriteLine("Total card values are currently {0}", PlayerArray[0].GetTotalCards());
+
+              }
+               
+
+
+            }
 
 
        }
