@@ -325,16 +325,16 @@ namespace Gambling
 
    {
 
-        public bool Drawed { get; set; }
-        public string Name { get; set; }
-        public int Value { get; set; }
-        public int Color { get; set; }
+        public bool Drawed { get; set; } //legeacy kode som ikke bliver brugt.
+        public string Name { get; set; } //Navn som ACE & KONGE til at kende kortet
+        public int Value { get; set; } //Kortets værdi f.eks KONGE = 10
+        public int Color { get; set; } //Beskriver hjerte, ruder, spar, & klør
    }
    internal class Player
 
    {
       public List<Card> PlayerCards = new List<Card>(); 
-      public int Cash { get; set; }
+      public int Cash { get; set; } 
       public bool isAlive { get; set; }
       public int GetTotalCards()
       {
