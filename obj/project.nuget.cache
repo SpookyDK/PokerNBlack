@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VIGg0VX6tM2S1AzXrc3pHDGQc7aEtvTwb7ZpzEBuuSgFLncxNsmY6PxMKbpHNjVvjC21tC8tDihw4zW8181Yig==",
+  "dgSpecHash": "Lcg04rUGqqGe2ayjaTfs44m7MGl3Iqc1c5Cgb5hcYR6jy3slqi4HGtQFzX0NVLvdtoNtEBcgv86LtCm9nKGyfw==",
   "success": true,
-  "projectFilePath": "/home/esben/Programmering/PokerNBlack/Gambling.csproj",
+  "projectFilePath": "/home/esben/Programmering/Gambling/Gambling.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

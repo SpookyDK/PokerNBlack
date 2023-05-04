@@ -188,7 +188,7 @@ namespace Gambling
 
 
           }
-          bool DealerDrawing = true;
+            bool DealerDrawing = true;
             while (DealerDrawing)
             {
               if (PlayerArray[0].GetTotalCards() >= 16)
@@ -200,7 +200,7 @@ namespace Gambling
 
 
               }
-              else if (PlayerArray[0].GetTotalCards() >= 21)
+              else if (PlayerArray[0].GetTotalCards() > 21)
               {
                 DealerDrawing = false;
                 PlayerArray[0].isAlive = false;
@@ -220,6 +220,31 @@ namespace Gambling
 
 
             }
+
+            if (PlayerArray[0].isAlive)
+            
+            {
+                for (int i = 1; i < PlayerArray.Count; i++)
+                {
+                  if (PlayerArray[0].GetTotalCards() > PlayerArray[i].GetTotalCards())
+                  {
+                      System.Console.WriteLine("Player {0} has less points than the dealer", i);
+                  }
+                  else if (PlayerArray[0].GetTotalCards() < PlayerArray[i].GetTotalCards())
+                  {
+                      System.Console.WriteLine("Player {0} has more points than the dealer", i);
+                  }
+                  else if (PlayerArray[0].GetTotalCards() < PlayerArray[i].GetTotalCards())
+                  {
+                      System.Console.WriteLine("Player {0} is drawed with the dealer", i);
+                  }
+                }
+
+
+
+
+            }
+            System.Console.ReadLine();
 
 
        }
